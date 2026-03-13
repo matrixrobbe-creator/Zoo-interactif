@@ -1,0 +1,126 @@
+/* --- Styles Généraux --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Container du Zoo --- */
+#zoo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* --- Cartes des Animaux --- */
+.animal {
+    width: 180px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    user-select: none; /* Empêche la sélection du texte au clic */
+}
+
+.animal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    border-color: #3498db;
+}
+
+.animal img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.animal p {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 5px 0 0;
+}
+
+/* --- États : Sélectionné et Nourri --- */
+.selected {
+    border: 3px solid #ffcc00 !important;
+    background-color: #fffdf2 !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4) !important;
+}
+
+.nourri {
+    background-color: #e8f5e9;
+    border-color: #4caf50 !important;
+}
+
+/* --- Blocs d'Information et Nourriture --- */
+#nourriture, #infos {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#compteur {
+    color: #e67e22;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* --- Bouton Stylisé --- */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 0 #2980b9;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #2980b9;
+}
+
+/* --- Message d'info --- */
+#message {
+    font-style: italic;
+    color: #7f8c8d;
+    min-height: 1.2em;
+}
+
+/* --- Animations --- */
+.animate-miam {
+    animation: miam-explosion 0.5s ease-in-out;
+}
+
+@keyframes miam-explosion {
+    0% { transform: scale(1.05); }
+    30% { transform: scale(1.4) rotate(8deg); }
+    50% { transform: scale(0.9) rotate(-8deg); }
+    100% { transform: scale(1.05); }
+}
